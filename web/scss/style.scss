@@ -40,11 +40,16 @@
   padding: 100px 0px;
 }
 
-.banner-header > h1 {
-  font-weight: 900;
-  font-size: 70px;
-  direction: rtl;
-
+.banner-header {
+  h1 {
+    font-weight: 700;
+    font-size: 70px;
+    direction: rtl;
+  }
+  h2 {
+    font-weight: 400;
+    direction: rtl;
+  }
   span {
     color: $primary;
   }
@@ -57,6 +62,29 @@
   background-position: center;
   min-height: calc(100vh - 256px);
 }
+
+
+// Service Section
+
+.service-logo {
+  margin-bottom: 20px;
+  .lnr {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1400px) {
   .margin-top {
