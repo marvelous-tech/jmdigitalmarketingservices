@@ -1,0 +1,116 @@
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.margin-top {
+  margin-top: $top-margin;
+}
+
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.show.dropdown .dropdown-toggle::after {
+  transform: translateY(3px);
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  display: flex !important;
+  align-items: center !important;
+  font-weight: bold;
+
+  .lnr {
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+}
+
+// Contents
+
+.banner-svg-image-wrapper {
+  padding: 100px 0px;
+}
+
+.banner-header > h1 {
+  font-weight: 900;
+  font-size: 70px;
+  direction: rtl;
+
+  span {
+    color: $primary;
+  }
+}
+
+.banner-bg {
+  background-image: url('../images/illustrations/undraw_Analytics_re_dkf8.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 256px);
+}
+
+@media (max-width: 1400px) {
+  .margin-top {
+    margin-top: $top-margin + 55px;
+  }
+  .navbar-collapse {
+    position: absolute;
+    top: 54px;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    background-color: $light;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-bg {
+    background-image: url('../images/illustrations/undraw_Charts_re_5qe9.png');
+  }
+  .banner-header > h1 {
+    font-size: 60px;
+    padding-right: 20px;
+    color: grey;
+  }
+  .margin-top {
+    margin-top: $top-margin;
+  }
+  .navbar-collapse {
+    position: absolute;
+    height: 100vh;
+    width: auto;
+    top: 56px;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    background-color: $light;
+  }
+  .navbar-collapse.collapsing {
+    -webkit-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+    -moz-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+    left: -100%;
+    height: 100vh;
+  }
+  .navbar-collapse.show {
+    left: 0;
+    -webkit-transition: left 0.3s ease-in;
+    -o-transition: left 0.3s ease-in;
+    -moz-transition: left 0.3s ease-in;
+    transition: left 0.3s ease-in;
+    height: 100vh;
+  }
+}
