@@ -1,14 +1,45 @@
 @import "variables";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $light;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($primary, 10%);
+}
+
+// Utils
+
+.text-dark-secondary {
+  color: $dark-secondary;
+}
+
+// Navigation Part
+
 .navbar-brand {
   font-weight: 700;
+
+  img {
+    max-width: 200px
+  }
 }
 
 .margin-top {
   margin-top: $top-margin;
 }
-
 
 .dropdown-toggle::after {
   content: none;
@@ -37,7 +68,7 @@
 // Contents
 
 .banner-svg-image-wrapper {
-  padding: 100px 0px;
+  padding: 10px 0px 100px 0px;
 }
 
 .banner-header {
@@ -62,21 +93,205 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 256px);
+  min-height: calc(100vh - 300px);
 }
 
 
 // Service Section
 
-.service-logo {
-  margin-bottom: 20px;
+.service {
+  margin-top: 20px;
+  width: 100%;
+  .service-logo {
+    margin-bottom: 20px;
 
-  .lnr {
-    font-size: 30px;
-    font-weight: bolder;
+    .lnr {
+      font-size: 40px;
+      font-weight: bolder;
+    }
+
+    .icon {
+      font-size: 44px;
+      font-weight: bolder;
+    }
+  }
+  .service-details {
+    height: 220px;
+    overflow-y: hidden;
+    ul {
+      li {
+        padding-top: 5px;
+        font-weight: 600;
+      }
+      li::before {
+        content: "\f054";
+        font-family: "Font Awesome 5 Free";
+        color: darken($light, 20%);
+        font-weight: 700;
+        margin-right: 5px;
+        font-size: 15px;
+      }
+    }
+  }
+  .service-action-button {
+    a {
+      padding: 10px 20px;
+      width: 100%;
+    }
   }
 }
 
+// About Section
+
+.about-section {
+  margin: 100px 0;
+  $about-full-width: 1000px;
+
+  .container {
+    .row {
+      img {
+        max-width: $about-full-width / 3;
+      }
+
+      p {
+        max-width: $about-full-width / 2;
+        font-weight: 300;
+        color: $dark;
+      }
+    }
+    @media (min-width: 786px) {
+      .row:nth-child(odd) {
+        margin-bottom: 50px;
+        img {
+          float: right;
+        }
+        p {
+          direction: ltr;
+        }
+      }
+      .row:nth-child(even) {
+        img {
+          float: left;
+        }
+        .about-heading {
+          float: right;
+        }
+        p {
+          direction: rtl;
+          float: right;
+        }
+      }
+    }
+
+    @media (max-width: 786px) {
+
+      .row {
+        margin-bottom: 20px;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+
+      .about-img {
+        max-width: $about-full-width / 3.5;
+        margin-bottom: 20px;
+      }
+
+      .img-mobile {
+        text-align: center;
+      }
+    }
+  }
+
+  .about-heading {
+    color: $primary;
+  }
+}
+
+// beautiful-bar
+
+.beautiful-bar {
+  padding: 15px 0;
+  background-color: $primary;
+  .row {
+    * {
+      text-align: center;
+      color: $light;
+      font-family: Poppins, sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 10px 0;
+    }
+  }
+}
+
+// footer bar
+
+.bg-dark-primary {
+  background-color: $dark-primary;
+}
+
+.footer {
+  hr {
+    color: $light;
+  }
+
+  ul {
+    li {
+      padding-bottom: 7px;
+    }
+  }
+
+  a, p {
+    text-decoration: none;
+    color: $light;
+  }
+
+  a:hover {
+    color: lighten($primary, 30%);
+  }
+}
+
+// Shi**ty medias
+
+// iphone-x (375 X 812)
+
+@media (max-width: 375px) and (min-height: 812px) {
+  .banner-bg {
+    min-height: calc(100vh - 450px);
+  }
+}
+
+// iphone-5/SE (350 X 568)
+
+@media (max-width: 350px) and (min-height: 568px) {
+  .banner-bg {
+    min-height: calc(100vh - 200px);
+  }
+}
+
+// pixel 2 XL (411 X 823)
+
+@media (max-width: 411px) and (min-height: 823px) {
+  .banner-bg {
+    min-height: calc(100vh - 450px);
+  }
+}
+
+// Galaxy Fold (280 X 653)
+
+@media (max-width: 280px) and (min-height: 653px) {
+  .banner-bg {
+    min-height: calc(100vh - 250px);
+  }
+
+  .navbar-brand {
+    img {
+      max-width: 150px
+    }
+  }
+}
 
 @media (max-width: 1400px) {
   .margin-top {
@@ -94,24 +309,43 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .banner-bg {
-    background-image: url('../images/illustrations/undraw_Charts_re_5qe9.png');
+    background-image: url('../images/illustrations/background-mobile-360 (1).png');
+    background-size: calc(100vw - 100px);
   }
   .banner-header {
     h1 {
-      font-size: 55px;
+      font-size: 3.0rem;
       font-weight: 600;
       line-height: 0.9;
-      padding-right: 20px;
+      padding: 0 20px;
       color: $dark;
     }
     h2 {
-      padding-right: 20px;
+      padding: 0 20px;
       font-size: 20px;
     }
   }
+}
 
+@media (max-width: 768px) {
+  .banner-bg {
+    background-size: calc(100vw);
+  }
+  .banner-header {
+    h1 {
+      font-size: 2.0rem;
+      font-weight: 600;
+      line-height: 0.9;
+      padding: 0 20px;
+      color: $dark;
+    }
+    h2 {
+      padding: 0 20px;
+      font-size: 20px;
+    }
+  }
   .margin-top {
     margin-top: $top-margin;
   }
