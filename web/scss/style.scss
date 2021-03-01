@@ -67,33 +67,101 @@
 
 // Contents
 
-.banner-svg-image-wrapper {
-  padding: 10px 0px 100px 0px;
+// Shapes
+
+// Bottom Left Triangle
+
+hr {
+  margin: 0 0 20px 0;
 }
 
-.banner-header {
-  h1 {
-    font-weight: 700;
-    font-size: 70px;
-    direction: rtl;
-  }
-
-  h2 {
-    font-weight: 400;
-    direction: rtl;
-  }
-
-  span {
-    color: $primary;
-  }
+.triangle {
+  z-index: -1;
+  position: absolute;
+  top: $top-margin;
+  bottom: 0;
 }
 
-.banner-bg {
-  background-image: url('../images/illustrations/undraw_Analytics_re_dkf8.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: calc(100vh - 300px);
+.triangle-bottom-left {
+  width: 0;
+  height: 0;
+  border-bottom: calc(100vh - 76px) solid $light;
+  border-right: 120vw solid transparent;
+}
+
+// Banner
+
+.banner-section {
+  background: url("../images/illustrations/banner-background.svg") no-repeat center;
+  min-height: 50vh;
+  background-position-y: bottom;
+  background-size: calc(100vw + 50px);
+  .banner {
+
+    .banner-header-main {
+      h1, .title {
+        font-weight: 700;
+        font-size: 55px;
+      }
+
+      h2, .subtitle {
+        font-weight: 400;
+      }
+
+      span, .special {
+        color: $primary;
+      }
+
+      ul {
+        li {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 786px) {
+        h1, .title {
+          padding-top: 15px;
+          font-size: 35px;
+        }
+      }
+    }
+
+    .banner-header {
+      h1, .title {
+        font-weight: 700;
+        font-size: 30px;
+        direction: rtl;
+        padding: 15px 0 0 0;
+      }
+
+      h2, .subtitle {
+        font-weight: 400;
+        direction: rtl;
+      }
+
+      span, .special {
+        color: $primary;
+      }
+
+      @media (max-width: 786px) {
+        h1, .title {
+          padding-top: 10px;
+          direction: ltr;
+        }
+
+        h2, .subtitle {
+          direction: ltr;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .contact-form {
+        margin-bottom: 20px !important;
+      }
+    }
+  }
 }
 
 
@@ -258,34 +326,21 @@
 // iphone-x (375 X 812)
 
 @media (max-width: 375px) and (min-height: 812px) {
-  .banner-bg {
-    min-height: calc(100vh - 450px);
-  }
 }
 
 // iphone-5/SE (350 X 568)
 
 @media (max-width: 350px) and (min-height: 568px) {
-  .banner-bg {
-    min-height: calc(100vh - 200px);
-  }
 }
 
 // pixel 2 XL (411 X 823)
 
 @media (max-width: 411px) and (min-height: 823px) {
-  .banner-bg {
-    min-height: calc(100vh - 450px);
-  }
 }
 
 // Galaxy Fold (280 X 653)
 
 @media (max-width: 280px) and (min-height: 653px) {
-  .banner-bg {
-    min-height: calc(100vh - 250px);
-  }
-
   .navbar-brand {
     img {
       max-width: 150px
@@ -310,10 +365,6 @@
 }
 
 @media (max-width: 991px) {
-  .banner-bg {
-    background-image: url('../images/illustrations/background-mobile-360 (1).png');
-    background-size: calc(100vw - 100px);
-  }
   .banner-header {
     h1 {
       font-size: 3.0rem;
@@ -330,9 +381,6 @@
 }
 
 @media (max-width: 768px) {
-  .banner-bg {
-    background-size: calc(100vw);
-  }
   .banner-header {
     h1 {
       font-size: 2.0rem;
