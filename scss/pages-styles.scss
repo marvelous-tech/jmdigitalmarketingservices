@@ -47,3 +47,21 @@
 .contact-section {
   margin-top: 30px;
 }
+
+.text-section {
+  li {
+    list-style: none;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+  //li::before {
+  //  content: "\f054";
+  //  font-family: "Font Awesome 5 Free";
+  //  color: darken($light, 20%);
+  //  font-weight: 700;
+  //  margin-right: 5px;
+  //  font-size: 15px;
+  //}
+}

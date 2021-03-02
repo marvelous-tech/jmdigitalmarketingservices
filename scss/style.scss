@@ -67,8 +67,8 @@ hr {
 // Banner
 
 .banner-section {
-  background: url("../images/illustrations/banner-background.svg") no-repeat center;
-  min-height: 50vh;
+  //background: url("../images/illustrations/banner-background.svg") no-repeat center;
+  min-height: 40vh;
   background-position-y: bottom;
   background-size: calc(100vw + 50px);
   .banner {
@@ -78,10 +78,12 @@ hr {
         font-weight: 700;
         font-size: 3rem;
         line-height: 1.2;
+        color: $light;
       }
 
       h2, .subtitle {
         font-weight: 400;
+        color: $light;
       }
 
       span, .special {
@@ -91,6 +93,7 @@ hr {
       ul {
         li {
           font-size: 1.2rem;
+          color: $light;
         }
       }
 
@@ -113,12 +116,15 @@ hr {
         font-size: 1.7rem;
         direction: rtl;
         padding: 15px 0 0 0;
+        color: $light;
       }
 
       h2, .subtitle {
         font-weight: 400;
         direction: rtl;
         font-size: 1.45rem;
+        font-style: italic;
+        color: $light;
       }
 
       span, .special {
@@ -556,7 +562,7 @@ hr {
         }
 
         h2, .subtitle {
-          font-size: 1.3rem;
+          font-size: 1.1rem;
         }
 
         span, .special {
@@ -651,6 +657,9 @@ hr {
     .service-details {
       height: auto;
     }
+  }
+  .banner-section {
+
   }
   .banner-header {
     h1 {
